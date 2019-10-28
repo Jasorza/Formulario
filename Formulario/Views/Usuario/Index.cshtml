@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Formulario.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Documento)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nacimiento)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Mensaje)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Motivo)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Distrito)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distrito.Nombre)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.UsuarioID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
