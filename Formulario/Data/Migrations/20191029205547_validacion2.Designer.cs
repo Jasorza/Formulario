@@ -4,14 +4,16 @@ using Formulario.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Formulario.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191029205547_validacion2")]
+    partial class validacion2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,11 +101,9 @@ namespace Formulario.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(15);
 
-                    b.Property<string>("Mail")
-                        .IsRequired();
+                    b.Property<string>("Mail");
 
-                    b.Property<string>("Mensaje")
-                        .HasMaxLength(500);
+                    b.Property<string>("Mensaje");
 
                     b.Property<int>("MotivoID");
 
